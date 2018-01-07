@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>BinaryMath</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body >
+    <header>
+        <h2>BinaryMath</h2>
+    </header>
+    
+    <div id="overlay" >
+        <div id="close" onclick="off()"><img src="css/back.svg" height="25px" width="25px" alt=""></div>
+        <div id="text">
+                This App is programmed by
+                <br>
+                <a onclick='window.open("http://www-stud.uni-due.de/~smabauff/", "_system");' > Abdul nafea auf</a>
+        </div>
+    </div>
+
+    <label id="11">Binary</label>
+    <input id = "1" type="number" onkeyup="binary()" pattern="[0-1]" class="text">
+    <button class="clear-btn" onclick="clearr(1)">clear</button>
+
+
+    <label id="21">hexadecimal</label>
+    <input id = "2" type="text" onkeyup="hex()" class="text">
+    <button onclick="clearr(2)" class="clear-btn">clear</button>
+    
+
+
+    <label id="31">decimal</label>
+    <input id = "3" type="number" onkeyup="decimal()" class="text">
+    <button onclick="clearr(3)" class="clear-btn">clear</button>
+    
+
+
+
+
+    <button class="about-btn" onclick="about()">about</button>
+    <a  href="http://apache.org" target="_blank"> Abdul nafea auf</a>
+   
+    <script src="js/bignumber.min.js" defer></script>
+
+
+    <script>
+        
+        function about(){
+			document.getElementById("overlay").style.display = "block";
+		}
+        function off() {
+    		document.getElementById("overlay").style.display = "none";
+		}
+        function clearr(i){
+            document.getElementById(i).value = '';
+            var name = i + '1';
+            document.getElementById(name).style.color = '#4CFFA8' ;
+
+        }
+        function binary(){
+            if(document.getElementById('1').value == ''){
+                document.getElementById("11").style.color = '#4CFFA8' ;
+                document.getElementById("2").value = '3';
+                document.getElementById("3").value = '2';
+                return;
+            }
+            var bin = document.getElementById('1').value;
+			try {
+                var x = new BigNumber(bin, 2);
+                document.getElementById("11").style.color = '#4CFFA8' ;
+			}
+			catch(err) {
+				document.getElementById("11").style.color = "#ff4d4d";
+				return;
+			}
+			document.getElementById("3").value = x.toString(10);
+            document.getElementById("2").value = x.toString(16).toUpperCase();
+			
+        }
+
+
+        function hex(){
+            if(document.getElementById('2').value == ''){
+                document.getElementById("21").style.color = '#4CFFA8' ;
+                document.getElementById("1").value = '';
+                document.getElementById("3").value = '';
+                return;
+            }
+            var hex = document.getElementById('2').value;
+			try {
+                var x = new BigNumber(hex, 16);
+                document.getElementById("21").style.color = '#4CFFA8' ;
+			}
+			catch(err) {
+				document.getElementById("21").style.color = "#ff4d4d";
+				return;
+            }
+            document.getElementById("1").value = x.toString(2);
+            document.getElementById("3").value = x.toString(10);
+			
+
+        }
+
+        function decimal(){
+            if(document.getElementById('3').value == ''){
+                document.getElementById("31").style.color = '#4CFFA8' ;
+                document.getElementById("1").value = '';
+                document.getElementById("2").value = '';
+                return;
+            }
+            var dec = document.getElementById('3').value;
+			try {
+                var x = new BigNumber(dec, 10);
+                document.getElementById("31").style.color = '#4CFFA8' ;
+			}
+			catch(err) {
+				document.getElementById("31").style.color = "#ff4d4d";
+				return;
+            }
+            document.getElementById("2").value = x.toString(16).toUpperCase();
+            document.getElementById("1").value = x.toString(2);
+            
+        }
+        
+        
+        
+
+
+    </script>
+</body>
+
+</html>

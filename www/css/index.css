@@ -1,0 +1,140 @@
+*
+{
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+input
+{
+-webkit-user-select: auto !important;
+-khtml-user-select: auto !important;
+-moz-user-select: auto !important;
+-ms-user-select: auto !important;
+user-select: auto !important;
+}
+
+*{
+-webkit-user-drag: none;
+-moz-user-drag: none;
+-ms-user-drag: none;
+}
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+body {
+    background-color: rgb(66, 73, 70);
+}
+
+header h2 {
+    padding: 20px;
+    text-align: center;
+    background-color: #007F42;
+    color: #4CFFA8;
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.2);
+}
+.text {
+    width: 77%;
+    float: left;
+    height: 20px;
+    margin-left: 2.5%;
+    box-sizing: border-box;
+    padding: 15px;
+    font-size: 1.2em;
+    text-align: center;
+    background: rgb(90, 100, 96);
+    color: #4CFFA8;
+    border: none;
+    text-transform: uppercase;
+    border-bottom: 2px solid #007F42;
+}
+.text:focus {
+    outline: 0;
+}
+label {
+    display: block;
+    color: #4CFFA8;
+    padding: 10px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    padding-left: 2.5%;
+    text-transform: uppercase;
+}
+.about-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+    background: #007F42 ;
+    color: #4CFFA8;
+    border: 0;
+    font-weight: bold;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    border-radius: 50%;
+    outline: none;
+    opacity: 0.8;
+}
+
+.clear-btn {
+    width: 18%;
+    background: #007F42 ;
+    color: #4CFFA8;
+    border: 0;
+    height: 32px;
+    padding: 8px 5px;
+    outline: none;
+    font-weight: bold;
+    box-sizing: border-box;
+    border-bottom: 2px solid #4CFFA8;
+    text-transform: uppercase;
+}
+.clear-btn:active {
+    background: rgb(1, 112, 58);
+    border-bottom: 2px solid #007F42;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(216, 216, 216);
+    z-index: 1;
+}
+#text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 20px;
+    color: rgb(95, 95, 95);
+    transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+    text-align: center;
+    z-index: 4;
+}
+#text a {
+    color: rgb(0, 119, 62);
+    z-index: 5;
+}
+#close {
+    display: block;
+    padding: 20px;
+    background-color: #007F42;
+    color: white;
+    z-index: 4;
+    
+}
+a {
+    display: block;
+    padding: 20px;
+}
